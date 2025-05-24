@@ -1,0 +1,125 @@
+import { StyleSheet } from "react-native";
+import { themas } from "@/src/global/themes";
+
+export const styles = StyleSheet.create({
+  container: {
+    height: "100%",
+    width: "100%",
+    paddingHorizontal: 10,
+  },
+  caixa1: {
+    backgroundColor: 'white',
+    width: 'auto',
+    height: 'auto',
+    borderRadius: 10,
+    borderWidth: 1,
+    borderStyle: "solid",
+    borderColor: "black",
+    padding: 10,
+    marginBottom: 5,
+    textAlign: "left",
+  },
+  caixa2: {
+    backgroundColor: 'white',
+    borderColor: 'black',
+    borderWidth: 1,
+    borderStyle: "solid",
+    width: 'auto',
+    height: 'auto',
+    borderRadius: 10,
+    padding: 10,
+    marginBottom: 50,
+    textAlign: "left",
+  },
+  text: {
+    fontSize: 16,
+    color: "black",
+  },
+  text2: {
+    fontSize: 16,
+    color: "black",
+  },
+  textCpf: {
+    fontSize: 16,
+    color: "black",
+  },
+  textTittle: {
+    fontSize: 19,
+    color: "black",
+    marginTop: 2,
+  },
+  textTittleCpf: {
+    fontSize: 19,
+    color: "black",
+    marginTop: 20,
+  },
+  textTitleData: {
+    fontSize: 19,
+    color: "black",
+  },
+  textTitleEnde: {
+    fontSize: 19,
+    color: "black",
+    marginTop: 15,
+  },
+  textTitleGen: {
+    fontSize: 19,
+    color: "black",
+    marginTop: 15,
+  },
+  textAlterar: {
+    fontSize: 14,
+    color: "black",
+  },
+  input: {
+    height: 40,
+    borderWidth: 2,
+    borderColor: 'black',
+    borderRadius: 10,
+    padding: 10,
+    marginVertical: 3,
+    fontSize: 14,
+    backgroundColor: 'white'
+  },
+  buttonAlterar: {
+    width: 90,
+    height: 30,
+    marginTop: 29,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: themas.colors.primary,
+    borderRadius: 40,
+    elevation: 7,
+  },
+  botaoSalvar: {
+    width: 90,
+    height: 30,
+    marginTop: 15,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: themas.colors.primary,
+    borderRadius: 40,
+    elevation: 7,
+  },
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    paddingVertical: 10,
+  },
+  picker: {
+    width: '100%',
+    height: 'auto',
+    color: 'black',
+    backgroundColor: 'white',
+    fontSize: 14,
+    borderRadius: 10,
+  },
+  pickerContainer: {
+    borderWidth: 2,
+    borderColor: 'black',
+    borderRadius: 10,
+    marginVertical: 3,
+    backgroundColor: 'white',
+  },
+});
