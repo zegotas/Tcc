@@ -1,0 +1,101 @@
+{
+  "restaurants": [
+    { 
+      "id": "1", 
+      "name": "Elétrica do Marcos", 
+      "image": "https://i.imgur.com/sZ1Jye3.png"
+    },
+    { 
+      "id": "2", 
+      "name": "Limpezas Fast Joaquina", 
+      "image": "https://i.imgur.com/su4iB3p.png"
+    },
+    { 
+      "id": "3", 
+      "name": "Viver Bem Flaviane", 
+      "image": "https://i.imgur.com/jg3GJVN.png"
+    },
+    { 
+      "id": "4", 
+      "name": "Soluções Andres", 
+      "image": "https://i.imgur.com/ffYWFBX.png"
+    },
+    { 
+      "id": "5", 
+      "name": "Aulas Pauliho", 
+      "image": "https://i.imgur.com/kmQvG2T.png"
+    },
+    { 
+      "id": "6", 
+      "name": "Ariane teacher", 
+      "image": "https://i.imgur.com/uXRuDFD.png"
+    }
+  ],
+  "foods": [
+    { 
+      "id": "1", 
+      "name": "Instalar ar Condionado", 
+      "price": 1500,
+      "time": "30/12/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/CEVUdju.png",
+      "restaurantId": "1",
+      "description": "Serviço rapidASDPOKASOPKDASPOKDPOASKkopasdkodpsakpodaskpdkaspdkaspokdposakdopsakdpsakpoaskopaspoaspoaskxdpokasdpokaspodkaspodkaso e eficaz",
+      "prestador": "Luan Gameplay",
+      "location": "Favela do Muquiço",
+      "type": "Instalação de Ar Condicionado"    
+    },
+    { 
+      "id": "2", 
+      "name": "Faxina ", 
+      "price": "150",
+      "time": "23/11/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/uXRuDFD.png",
+      "restaurantId": "6",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Carlos Silva",
+      "location": "Três Rios",
+      "type": "Serviço de Limpeza" 
+    },
+    { 
+      "id": "3", 
+      "name": "Bolo Aniversário", 
+      "price": "Faxina",
+      "time": "11/06/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/O5c3lyU.png",
+      "restaurantId": "5",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Joaquina Silva",
+      "location": "Xerém",
+      "type": "Confeitaria"   
+    },
+    { 
+      "id": "4", 
+      "name": "Montagem de Computador", 
+      "price": "Limpeza caixa d'águaaaaaaaaaaaaaa",
+      "time": "09/07/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/0UjG3wk.png",
+      "restaurantId": "3",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Cleiton Silva",
+      "location": "Bangu",
+      "type": "Montagem de Computador"            
+    },
+    { 
+      "id": "5", 
+      "name": "Troca de Pneus", 
+      "price": "Serviços de elétrica",
+      "time": "14/06/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/BaUUCkc.png",
+      "restaurantId": "3",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Manoel do Pastel",
+      "location": "Nova Iguaçu",
+      "type": "Troca de Pneus"           
+    }
+  ]
+}
