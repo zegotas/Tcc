@@ -18,7 +18,21 @@ export function Corpo() {
       <Text className="text-black text-2xl font-bold mt-4">
         {service.name}
       </Text>
-      <Text className='text-black text-xl mt-2 '>{service.location} </Text>  
+
+
+      <View className='mt-4'>
+
+        <Text className="text-black text-2xl font-bold mt-4">
+            Valor estimado
+        </Text>
+
+        <Text className="text-black text-2xl font-bold">
+          R$ {service.estimado}
+        </Text>
+
+      </View>
+
+      <Text className='text-black text-xl mt-4 '>{service.location} </Text>  
       <Text className="text-neutral-500 text-base mt-1">
         Data: {service.time}
       </Text>

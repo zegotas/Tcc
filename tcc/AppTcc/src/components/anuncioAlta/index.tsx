@@ -15,6 +15,7 @@ export interface ServicoProps {
   prestador: string;
   location: string;
   type: string;
+  estimado: number;
 }
 
 export function AnuncioAlta() {
@@ -22,7 +23,7 @@ export function AnuncioAlta() {
 
     useEffect(() => {
        async function getServicos() {
-        const response = await fetch('http://192.168.0.7:3000/foods');
+        const response = await fetch('http://192.168.2.193:3000/foods');
         const data = await response.json();
         setServicos(data);
        }

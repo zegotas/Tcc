@@ -56,7 +56,7 @@
       "description": "Serviço rapido e eficaz",
       "prestador": "Carlos Silva",
       "location": "Três Rios",
-      "type": "Serviço de Limpeza" 
+      "type": "Serviço de Limpeza"
     },
     { 
       "id": "3", 
@@ -69,7 +69,8 @@
       "description": "Serviço rapido e eficaz",
       "prestador": "Joaquina Silva",
       "location": "Xerém",
-      "type": "Confeitaria"   
+      "type": "Confeitaria",
+      "estimado": "300"
     },
     { 
       "id": "4", 
