@@ -11,6 +11,7 @@ import {
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { DrawerButton } from '../../../src/components/drawer'
 
 type Conversation = {
   id: string;
@@ -58,7 +59,7 @@ export default function Mensagens() {
   const renderItem = ({ item }: { item: Conversation }) => (
     <TouchableOpacity
       style={styles.chatItem}
-      onPress={() => navigation.navigate('/Conversas', { user: item })}
+      onPress={() => navigation.navigate('/', { user: item })}
     >
       <Image source={{ uri: item.avatar }} style={styles.avatar} />
       <View style={styles.chatInfo}>
@@ -76,6 +77,11 @@ export default function Mensagens() {
 
   return (
     <View style={styles.container}>
+
+       <View>      
+       <DrawerButton/>
+       </View>     
+
       <TextInput
         style={styles.search}
         placeholder="Buscar conversa"

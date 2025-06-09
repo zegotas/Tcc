@@ -20,13 +20,6 @@ export function CardHorizontalServi({ servi }: { servi: ServicoProps }) {
       /> 
 
       <View className="px-1 py-2">
-        <Text 
-          className="text-green-700 font-medium text-lg w-full overflow-hidden"
-          numberOfLines={1}
-          ellipsizeMode="tail"
-        >
-          R$ {servi.price}
-        </Text>
 
         <Text 
           className="text-black mt-1 w-full overflow-hidden"
@@ -34,6 +27,14 @@ export function CardHorizontalServi({ servi }: { servi: ServicoProps }) {
           ellipsizeMode="tail"
         >
           {servi.name}
+        </Text>
+
+        <Text 
+          className="text-green-700 font-medium text-lg w-full overflow-hidden"
+          numberOfLines={1}
+          ellipsizeMode="tail"
+        >
+          R$ {servi.price}
         </Text>
 
         <Text className="text-black mt-1 w-full overflow-hidden" numberOfLines={1}>

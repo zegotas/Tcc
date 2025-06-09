@@ -11,7 +11,7 @@ export function DrawerButton() {
   return (
     <View 
     style={{marginTop: statusBarHeight}}
-    className= 'w-full flex flex-row items-center justify-between'>
+    className= 'w-full flex px-4 flex-row items-center justify-between'>
       <Pressable
         onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
         className='w-10 h-10 rounded-full flex justify-center items-center'>

@@ -48,6 +48,24 @@ export default function DrawerLayout() {
             ),
           }}
         />
+        <Drawer.Screen
+          name="stack"
+          options={{
+            drawerLabel: 'Mensagens',
+            drawerIcon: ({ color }) => (
+              <Ionicons name="chatbubbles-outline" size={20} color={color} /> 
+            ),
+          }}
+        />
+        <Drawer.Screen
+          name="sair"
+          options={{
+            drawerLabel: 'Sair',
+            drawerIcon: ({ color }) => (
+              <Ionicons name="log-out-outline" size={20} color={color} /> 
+            ),
+          }}
+        />
       </Drawer>
     </GestureHandlerRootView>
   );
