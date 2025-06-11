@@ -34,7 +34,7 @@ export  function Anuncio() {
              <Pressable 
              className='w-full h-36 md:h-60 rounded-2xl' 
              key='3'
-             onPress={() => console.log('Anúncio 3 Pressionado')}
+             onPress={() => console.log('Anúncio 2 Pressionado')}
              >
                  <Image
                  source={require("../../assets/anuncio/flaviane.png")}

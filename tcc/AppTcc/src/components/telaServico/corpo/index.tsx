@@ -53,8 +53,8 @@ export function Corpo() {
         <Text className="text-black text-base mt-2 ">{service.type}</Text>
       </View>
 
-      <View className="flex h-15 mt-6 bg-white p-4 rounded-2xl">
-        <Text className="text-lg font-medium text-black ">Prestador</Text>
+      <View className="flex h-15 mt-6 bg-white p-2 rounded-2xl justify-between ">
+        <Text className="text-lg font-medium text-black ">Anunciante</Text>
         <Text className="text-lg text-gray-700 mt-1">
           {service.prestador}
         </Text>

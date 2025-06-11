@@ -103,12 +103,6 @@ export const styles = StyleSheet.create({
       color: '#888',
       marginBottom: 10,
     },
-    botao: {
-      backgroundColor: '#007AFF',
-      paddingVertical: 10,
-      borderRadius: 10,
-      alignItems: 'center',
-    },
     botaoTexto: {
       color: '#fff',
       fontWeight: 'bold',

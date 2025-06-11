@@ -14,7 +14,7 @@ export function Prestadores() {
 
     useEffect(() => {
        async function getServicos() {
-        const response = await fetch('http://192.168.2.193:3000/restaurants');
+        const response = await fetch('http://192.168.0.7:3000/restaurants');
         const data = await response.json();
         setPrestadores(data);
        }
