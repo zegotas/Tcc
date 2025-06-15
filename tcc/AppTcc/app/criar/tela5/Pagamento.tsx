@@ -70,14 +70,14 @@ export default function Pagamento() {
 
             <View className="flex-row justify-around mb-6">
               <TouchableOpacity
-                className={`px-6 py-3 rounded-full ${tipo === 'pagamento' ? 'bg-indigo-400' : 'bg-gray-400'}`}
+                className={`px-6 py-3 rounded-full ${tipo === 'pagamento' ? 'bg-sky-500' : 'bg-gray-400'}`}
                 onPress={() => setValue('tipo', 'pagamento')}
               >
                 <Text className="text-white font-medium">Pagamento</Text>
               </TouchableOpacity>
 
               <TouchableOpacity
-                className={`px-6 py-3 rounded-full ${tipo === 'permuta' ? 'bg-indigo-400' : 'bg-gray-400'}`}
+                className={`px-6 py-3 rounded-full ${tipo === 'permuta' ? 'bg-sky-500' : 'bg-gray-400'}`}
                 onPress={() => setValue('tipo', 'permuta')}
               >
                 <Text className="text-white font-medium">Permuta</Text>
@@ -152,7 +152,7 @@ export default function Pagamento() {
               <Text className="color-black font-medium">Voltar</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity className="bg-indigo-400 px-6 py-2 rounded-full" onPress={handleSubmit(handleNextStep, handleErrors)}>
+            <TouchableOpacity className="bg-sky-500 px-6 py-2 rounded-full" onPress={handleSubmit(handleNextStep, handleErrors)}>
               <Text className="text-white font-medium">Continuar</Text>
             </TouchableOpacity>
           </View>

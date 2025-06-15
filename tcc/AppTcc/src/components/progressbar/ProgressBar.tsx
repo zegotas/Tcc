@@ -13,7 +13,7 @@ export function ProgressBar({ percentage }: ProgressBarProps) {
     <View className="w-full mb-5">
       <View className="h-2 bg-white w-full rounded-full">
         <View
-          className="h-2 bg-indigo-400 rounded-full"
+          className="h-2 bg-blue-600 rounded-full"
           style={{ width: `${safePercentage}%` }}
         />
       </View>

@@ -1,4 +1,4 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Pressable } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
 
@@ -51,14 +51,19 @@ export function Corpo() {
       </View>
 
       <View className="flex h-15 mt-6 bg-white p-2 rounded-2xl justify-between ">
-        <Text className="text-2xl font-medium text-black ">Anunciante</Text>
+        <Pressable
+          onPress={() => alert('Função de contato em desenvolvimento')}
+        >
+                  <Text className="text-2xl font-medium text-black ">Anunciante</Text>
         <Text className="text-xl text-gray-700 mt-1">
           {service.prestador}
         </Text>
         <View className='flex flex-row items-center space-x-1 gap-1 mt-6 right-3 absolute'>
           <Ionicons name="star" size={18} color="orange" />
           <Text className="text-gray-700">{service.rating || 'Sem avaliação'}</Text>
-        </View>       
+        </View> 
+        </Pressable>
+      
       </View>
 
       <TouchableOpacity 

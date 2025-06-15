@@ -34,7 +34,7 @@
   "foods": [
     { 
       "id": "1", 
-      "name": "Instalar ar Condionado", 
+      "name": "Instalar ar-condionado", 
       "price": 1500,
       "time": "30/12/2025",
       "rating": 4.0,
@@ -60,11 +60,11 @@
     },
     { 
       "id": "3", 
-      "name": "Bolo Aniversário", 
+      "name": "Bolo de aniversário", 
       "price": "Faxina",
       "time": "11/06/2025",
       "rating": 4.0,
-      "image": "https://i.imgur.com/o5i0CGV.jpeg",
+      "image": "https://i.imgur.com/QARa7HI.jpeg",
       "restaurantId": "5",
       "description": "Serviço rapido e eficaz",
       "prestador": "Joaquina Silva",
@@ -74,7 +74,7 @@
     },
     { 
       "id": "4", 
-      "name": "Montagem de Computador", 
+      "name": "Montagem de computador", 
       "price": "Limpeza caixa d'água",
       "time": "09/07/2025",
       "rating": 4.0,
@@ -87,7 +87,7 @@
     },
     { 
       "id": "5", 
-      "name": "Troca de Pneus", 
+      "name": "Troca de pneus", 
       "price": "Serviços de elétrica",
       "time": "14/06/2025",
       "rating": 4.0,
@@ -97,6 +97,74 @@
       "prestador": "Manoel do Pastel",
       "location": "Nova Iguaçu",
       "type": "Troca de Pneus"           
+    }
+  ],
+    "services": [
+        { 
+      "id": "1", 
+      "name": "Pintura automotiva", 
+      "price": 2500,
+      "time": "21/12/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/HmnAEh3.jpeg",
+      "restaurantId": "1",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Paulinho da pintura",
+      "location": "Três Rios",
+      "type": "Instalação de Ar Condicionado"    
+    },
+    { 
+      "id": "2", 
+      "name": "Mecânica automotiva", 
+      "price": "150",
+      "time": "23/11/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/rKlEQqS.jpeg",
+      "restaurantId": "6",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Paulão da regulagem",
+      "location": "Três Rios",
+      "type": "Serviço de mecânica"
+    },
+    { 
+      "id": "3", 
+      "name": "Manicure e pedicure", 
+      "price": "80",
+      "time": "11/06/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/thPDZ5G.jpeg",
+      "restaurantId": "5",
+      "description": "Serviço rápido e eficaz",
+      "prestador": "Maria Helena",
+      "location": "Paraíba do Sul",
+      "type": "Beleza e estética",
+      "estimado": "300"
+    },
+    { 
+      "id": "4", 
+      "name": "Marmitas fitness", 
+      "price": "40",
+      "time": "09/07/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/cg8m0Wj.jpeg",
+      "restaurantId": "3",
+      "description": "Serviço rápido e eficaz",
+      "prestador": "Cozinha da Elaine",
+      "location": "Três Rios",
+      "type": "Comida saudável"            
+    },
+    { 
+      "id": "5", 
+      "name": "Costura e ajustes", 
+      "price": "Pet sitter",
+      "time": "14/06/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/ehGS0Eu.jpeg",
+      "restaurantId": "3",
+      "description": "Serviço rápido e eficaz",
+      "prestador": "Regina dos ajustes",
+      "location": "Paraíba do Sul",
+      "type": "Pets"           
     }
   ],
   "usuario":[

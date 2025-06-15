@@ -8,7 +8,7 @@ export default function BtnCriar() {
 
   return (
     <TouchableOpacity
-      className='bg-indigo-400 rounded-full items-center justify-center h-10'
+      className='bg-sky-500 rounded-full items-center justify-center h-10'
       onPress={() => router.push('/criar/Criarservico')}
     >
       <Text style={styles.botaoTexto}>Adicionar Novo Serviço</Text>

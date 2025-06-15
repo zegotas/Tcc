@@ -106,7 +106,7 @@ export default function Criar() {
             onPress={handleSubmit(() => {
               router.push("/criar/tela5/Pagamento");
             })}
-            className="bg-indigo-400 px-6 py-2 rounded-full"
+            className="bg-sky-500 px-6 py-2 rounded-full"
           >
             <Text className="text-white font-medium">Continuar</Text>
           </TouchableOpacity>

@@ -102,7 +102,7 @@ export default function Photo() {
             Adicione até 6 fotos nos formatos JPG, PNG ou WEBP *
           </Text>
 
-          <TouchableOpacity onPress={pickImage} className="bg-indigo-400 px-6 py-3 rounded-full mb-4">
+          <TouchableOpacity onPress={pickImage} className="bg-sky-500 px-6 py-3 rounded-full mb-4">
             <Text className="text-white text-center font-medium">Selecionar Imagem</Text>
           </TouchableOpacity>
 
@@ -115,18 +115,18 @@ export default function Photo() {
           </View>
         </ScrollView>
 
-        {/* ProgressBar fixa acima dos botões */}
+
         <View className="absolute bottom-14 left-0 right-0 px-4">
           <ProgressBar percentage={40} />
         </View>
 
-        {/* Botões fixos no rodapé */}
+
         <View className="absolute bottom-0 left-0 right-0 bg-slate-300 px-4 py-4 border-t border-gray-300 flex-row justify-between items-center">
           <TouchableOpacity onPress={() => router.back()}>
             <Text className="color-black font-medium">Voltar</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity className="bg-indigo-400 px-6 py-2 rounded-full" onPress={handleNext}>
+          <TouchableOpacity className="bg-sky-500 px-6 py-2 rounded-full" onPress={handleNext}>
             <Text className="text-white font-medium">Continuar</Text>
           </TouchableOpacity>
         </View>

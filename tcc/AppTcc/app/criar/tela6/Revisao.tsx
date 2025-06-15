@@ -96,7 +96,7 @@ export default function Revisao() {
         </View>
 
         <View className="h-2 bg-white w-full rounded-full my-6">
-          <View className="h-2 bg-indigo-400 w-[100%] rounded-full" />
+          <View className="h-2 bg-blue-600 w-[100%] rounded-full" />
         </View>
 
         <View className="flex-row justify-between items-center mb-6">
@@ -105,7 +105,7 @@ export default function Revisao() {
           </TouchableOpacity>
 
           <TouchableOpacity
-            className="bg-green-500 px-6 py-2 rounded-full"
+            className="bg-sky-500 px-6 py-2 rounded-full"
             onPress={handleConfirmar}
           >
             <Text className="text-white font-medium">Confirmar Cadastro</Text>

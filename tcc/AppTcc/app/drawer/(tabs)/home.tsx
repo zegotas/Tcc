@@ -7,6 +7,7 @@ import { PesquisarServi } from '@/src/components/PesquisarServi/PesquisarServi';
 import { EmAlta } from '../../../src/components/alta/EmAlta';
 import { AnuncioAlta } from '@/src/components/anuncioAlta';
 import { Prestadores } from '@/src/components/prestadores';
+import { AnuncioLocal } from '@/src/components/AnuncioLocal';
 
 const statusBarHeight = Constants.statusBarHeight;
 
@@ -29,17 +30,17 @@ export default function Home() {
 
         <EmAlta
           name="Baseados na sua localização"
-          label="Veja Mais"
+          label="Veja mais"
           action={() => console.log('Clicou em Ver Mais')} 
           size={'text-2xl'}
           />
-          
 
-          <AnuncioAlta/>
+            {/* novo componente separado */}
+          <AnuncioLocal/>
 
         <EmAlta
-          name="Serviços em Alta"
-          label="Veja Mais"
+          name="Serviços em alta"
+          label="Veja mais"
           action={() => console.log('Clicou em Ver Mais')} 
           size={'text-2xl'}
           />
@@ -47,8 +48,8 @@ export default function Home() {
           <AnuncioAlta/>
 
                   <EmAlta
-          name="Prestadores em Alta"
-          label="Veja Mais"
+          name="Prestadores em alta"
+          label="Veja mais"
           action={() => console.log('Clicou em Ver Mais')} 
           size={'text-xl'}
           />

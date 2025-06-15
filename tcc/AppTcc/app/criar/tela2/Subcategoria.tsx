@@ -34,13 +34,11 @@ const subcategoriasPorCategoria: Record<string, string[]> = {
   ],
   'Beleza e estética': [
     'Cabeleireiro',
-    'Manicure e(ou) Pedicure',
+    'Manicure e(ou) pedicure',
     'Maquiador',
     'Esteticista',
     'Depilação',
     'Designer de sobrancelhas',
-    'Massoterapeuta',
-    'Quiropraxista',
     'Barbeiro',
     'Tatuador',    
     'Outros'
@@ -58,7 +56,7 @@ const subcategoriasPorCategoria: Record<string, string[]> = {
     'Boleiras',
     'Outros'
   ],
-  'Serviços administrativos e Profissionais': [
+  'Serviços administrativos e profissionais': [
     'Contador',
     'Advogado',
     'Psicólogo',
@@ -94,6 +92,20 @@ const subcategoriasPorCategoria: Record<string, string[]> = {
     'Aulas de dança',
     'Outros'
   ],
+  'Saúde e bem-estar': [
+    'Nutricionista',
+    'Personal trainer',
+    'Psicólogo',
+    'Fisioterapeuta',
+    'Massagista',
+    'Acupunturista',
+    'Quiropraxista',
+    'Terapeuta holístico',
+    'Outros'
+  ],
+  'Outros': [
+    'Outros',
+  ]
 };
 
 export default function Subcategoria() {
@@ -147,7 +159,7 @@ export default function Subcategoria() {
         
 
         <TouchableOpacity
-          className={`px-6 py-2 rounded-full ${selecionado ? 'bg-indigo-400' : 'bg-gray-400'}`}
+          className={`px-6 py-2 rounded-full ${selecionado ? 'bg-sky-500' : 'bg-gray-400'}`}
           disabled={!selecionado}
           onPress={handleContinuar}
         >

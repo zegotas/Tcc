@@ -16,7 +16,9 @@ const categorias = [
   'Eventos e festas',
   'Serviços administrativos e Profissionais',
   'Pets',
-  'Educação e aulas particulares'
+  'Educação e aulas particulares',
+  'Saúde e bem-estar',
+  'Outros'
 ];
 
 export default function CriarServico() {
@@ -64,7 +66,7 @@ export default function CriarServico() {
         </TouchableOpacity>
 
         <TouchableOpacity
-          className={`px-6 py-2 rounded-full ${selecionado ? 'bg-indigo-400' : 'bg-gray-400'}`}
+          className={`px-6 py-2 rounded-full ${selecionado ? 'bg-sky-500' : 'bg-gray-400'}`}
           disabled={!selecionado}
           onPress={handleContinuar}
         >
