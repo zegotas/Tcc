@@ -14,6 +14,12 @@ const statusBarHeight = Constants.statusBarHeight;
 export default function Home() {
   const data = [{}]; // dummy data só pra renderizar o bloco todo dentro do FlatList
 
+  const handleSearch = (termo: string) => {
+    if (termo.trim()) {
+      router.push({ pathname: '/drawer/(tabs)/pesquisar', params: { q: termo } });
+    }
+  };
+
   return (
     <FlatList
       data={data}
@@ -23,7 +29,10 @@ export default function Home() {
       renderItem={() => (
         <View className="w-full px-4" style={{ marginTop: statusBarHeight }}>
           <Header />
-          <PesquisarServi />
+
+          {/* Agora passando a prop onSearch */}
+          <PesquisarServi onSearch={handleSearch} />
+
           <Anuncio />
 
           <EmAlta

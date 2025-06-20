@@ -6,17 +6,25 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
+import { useLocalSearchParams } from 'expo-router';
 import { CardHorizontalServi } from '../../../src/components/BuscarServicos/servi';
 import { ServicoProps } from '@/src/components/BuscarServicos';
 
 export default function Pesquisar() {
+  const params = useLocalSearchParams();
+
   const [servicos, setServicos] = useState<ServicoProps[]>([]);
-  const [busca, setBusca] = useState('');
+  const [busca, setBusca] = useState(params.q?.toString() || '');
   const [filtroTipo, setFiltroTipo] = useState('');
   const [filtroSubtipo, setFiltroSubtipo] = useState('');
   const [tiposDisponiveis, setTiposDisponiveis] = useState<string[]>([]);
   const [subtiposDisponiveis, setSubtiposDisponiveis] = useState<string[]>([]);
 
+  useEffect(() => {
+    if (params.q !== undefined) {
+      setBusca(params.q.toString());
+    }
+  }, [params.q]);
   useEffect(() => {
     fetch('http://192.168.0.7:3000/services')
       .then((res) => res.json())
@@ -89,7 +97,7 @@ export default function Pesquisar() {
         </View>
       </ScrollView>
 
-      {filtroTipo ? (
+      {filtroTipo && (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} className="mb-3">
           <View className="flex-row gap-2">
             {subtiposDisponiveis.map((item) => (
@@ -111,7 +119,7 @@ export default function Pesquisar() {
             ))}
           </View>
         </ScrollView>
-      ) : null}
+      )}
 
       {servicosFiltrados.map((item) => (
         <View key={item.id} className="mb-4">
