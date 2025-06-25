@@ -1,0 +1,101 @@
+import { StyleSheet, Platform } from "react-native";
+import { themas } from "@/src/global/themes";
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    padding: 30,
+    backgroundColor: "#fff",
+  },
+  title: {
+    fontSize: 20,
+    fontWeight: "bold",
+    marginBottom: 20,
+    color: "#000",
+    textAlign: "center",
+  },
+  label: {
+    fontSize: 16,
+    marginBottom: 10,
+    color: "#333",
+    textAlign: "center",
+  },
+  radioGroup: {
+    width: "100%",
+    maxWidth: 400,
+    marginBottom: 20,
+  },
+  radioOption: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginBottom: 10,
+  },
+  radioLabel: {
+    fontSize: 16,
+    color: "#333",
+    marginLeft: 5,
+  },
+  infoText: {
+    fontSize: 14,
+    color: "#555",
+    marginBottom: 10,
+    textAlign: "center",
+  },
+  input: {
+    height: 60,
+    width: "100%",
+    borderWidth: 1,
+    borderRadius: 40,
+    paddingHorizontal: 15,
+    marginBottom: 10,
+    backgroundColor: themas.colors.lightGray,
+    borderColor: themas.colors.lightGray,
+    fontSize: 16,
+  },
+  helperText: {
+    fontSize: 12,
+    color: "#666",
+    marginBottom: 10,
+    textAlign: "center",
+  },
+  button: {
+    width: 250,
+    height: 50,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: themas.colors.primary,
+    borderRadius: 40,
+    elevation: 7,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  scrollContainer: {
+    flexGrow: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    padding: 30,
+  },
+  backToLogin: {  
+    fontSize: 15,
+    color: themas.colors.gray,
+    textAlign: "center",
+    marginTop: 20,
+    textDecorationLine: "underline",
+  },
+  inputPhone: {
+    height: 60,
+    width: "100%",
+    borderWidth: 1,
+    borderRadius: 40,
+    paddingHorizontal: 15,
+    marginBottom: 10,
+    backgroundColor: themas.colors.lightGray,
+    borderColor: themas.colors.lightGray,
+    fontSize: 16,
+  },
+});

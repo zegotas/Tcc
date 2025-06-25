@@ -1,0 +1,189 @@
+{
+  "restaurants": [
+    { 
+      "id": "1", 
+      "name": "Elétrica do Marcos", 
+      "image": "https://i.imgur.com/xaRVSKQ.jpeg"
+    },
+    { 
+      "id": "2", 
+      "name": "Limpezas Fast Joaquina", 
+      "image": "https://i.imgur.com/WDl00sN.jpeg"
+    },
+    { 
+      "id": "3", 
+      "name": "Viver Bem Flaviane", 
+      "image": "https://i.imgur.com/rtSQtK4.jpeg"
+    },
+    { 
+      "id": "4", 
+      "name": "Soluções Andres", 
+      "image": "https://i.imgur.com/U5fes9n.jpeg"
+    },
+    { 
+      "id": "5", 
+      "name": "Aulas Pauliho", 
+      "image": "https://i.imgur.com/SvenZHT.jpeg"
+    },
+    { 
+      "id": "6", 
+      "name": "Ariane teacher", 
+      "image": "https://i.imgur.com/cOwPlKP.jpeg"
+    }
+  ],
+  "foods": [
+    { 
+      "id": "1", 
+      "name": "Instalar ar-condionado", 
+      "price": 1500,
+      "time": "30/12/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/IKS7Bxw.png",
+      "restaurantId": "1",
+      "description": "Serviço rapidASDPOKASOPKDASPOKDPOASKkopasdkodpsakpodaskpdkaspdkaspokdposakdopsakdpsakpoaskopaspoaspoaskxdpokasdpokaspodkaspodkaso e eficaz",
+      "prestador": "Marcos Eletricista",
+      "prestadorId": "6850eaa19c32e7ae61ce07ae",
+      "location": "Favela do Muquiço",
+      "type": "Instalação de Ar Condicionado"    
+    },
+    { 
+      "id": "2", 
+      "name": "Faxina ", 
+      "price": "150",
+      "time": "23/11/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/kqDAQ7r.jpeg",
+      "restaurantId": "6",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Joaquina Limpeza",
+      "prestadorId": "6850eaa19c32e7ae61ce07b1",
+      "location": "Três Rios",
+      "type": "Serviço de Limpeza"
+    },
+    { 
+      "id": "3", 
+      "name": "Bolo de aniversário", 
+      "price": "Faxina",
+      "time": "11/06/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/QARa7HI.jpeg",
+      "restaurantId": "5",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Flaviane Bem Viver",
+      "prestadorId": "6850eaa19c32e7ae61ce07b4",
+      "location": "Xerém",
+      "type": "Confeitaria",
+      "estimado": "300"
+    },
+    { 
+      "id": "4", 
+      "name": "Montagem de computador", 
+      "price": "Limpeza caixa d'água",
+      "time": "09/07/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/9CeBidd.jpeg",
+      "restaurantId": "3",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Andres Soluções",
+      "prestadorId": "6850eaa19c32e7ae61ce07b7",
+      "location": "Bangu",
+      "type": "Montagem de Computador"            
+    },
+    { 
+      "id": "5", 
+      "name": "Troca de pneus", 
+      "price": "Serviços de elétrica",
+      "time": "14/06/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/Xbp3x20.jpeg",
+      "restaurantId": "3",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Pauliho Aulas",
+      "prestadorId": "6850eaa19c32e7ae61ce07ba",
+      "location": "Nova Iguaçu",
+      "type": "Troca de Pneus"           
+    }
+  ],
+  "services": [
+    { 
+      "id": "1", 
+      "name": "Pintura automotiva", 
+      "price": 2500,
+      "time": "21/12/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/HmnAEh3.jpeg",
+      "restaurantId": "1",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Ariane Teacher",
+      "prestadorId": "6850eaa19c32e7ae61ce07bd",
+      "location": "Três Rios",
+      "type": "Pintura automotiva"    
+    },
+    { 
+      "id": "2", 
+      "name": "Mecânica automotiva", 
+      "price": "150",
+      "time": "23/11/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/rKlEQqS.jpeg",
+      "restaurantId": "6",
+      "description": "Serviço rapido e eficaz",
+      "prestador": "Marcos Eletricista",
+      "prestadorId": "6850eaa19c32e7ae61ce07ae",
+      "location": "Três Rios",
+      "type": "Serviço de mecânica"
+    },
+    { 
+      "id": "3", 
+      "name": "Manicure e pedicure", 
+      "price": "80",
+      "time": "11/06/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/thPDZ5G.jpeg",
+      "restaurantId": "5",
+      "description": "Serviço rápido e eficaz",
+      "prestador": "Joaquina Limpeza",
+      "prestadorId": "6850eaa19c32e7ae61ce07b1",
+      "location": "Paraíba do Sul",
+      "type": "Beleza e estética",
+      "estimado": "300"
+    },
+    { 
+      "id": "4", 
+      "name": "Marmitas fitness", 
+      "price": "40",
+      "time": "09/07/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/cg8m0Wj.jpeg",
+      "restaurantId": "3",
+      "description": "Serviço rápido e eficaz",
+      "prestador": "Flaviane Bem Viver",
+      "prestadorId": "6850eaa19c32e7ae61ce07b4",
+      "location": "Três Rios",
+      "type": "Comida saudável"            
+    },
+    { 
+      "id": "5", 
+      "name": "Costura e ajustes", 
+      "price": "Pet sitter",
+      "time": "14/06/2025",
+      "rating": 4.0,
+      "image": "https://i.imgur.com/ehGS0Eu.jpeg",
+      "restaurantId": "3",
+      "description": "Serviço rápido e eficaz",
+      "prestador": "Andres Soluções",
+      "prestadorId": "6850eaa19c32e7ae61ce07b7",
+      "location": "Paraíba do Sul",
+      "type": "Pets",
+      "estimado": "150"      
+    }
+  ],
+  "usuario":[
+    {
+      "id":"1"
+    },
+    {
+      "id":"2"
+    }
+  ]
+}
