@@ -17,6 +17,8 @@ import { themas } from "@/src/global/themes";
 import { router } from "expo-router";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getApiUrl } from "../src/global/api";
+import * as Notifications from 'expo-notifications';
+
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -31,65 +33,76 @@ export default function Login() {
   }
 
   async function getLogin() {
-    try {
-      setLoading(true);
+  try {
+    setLoading(true);
 
-      if (!email || !password) {
-        Toast.show({
-          type: "error",
-          text1: "Atenção!",
-          text2: "Preencha todos os campos!",
-        });
-        return;
-      }
-
-      if (!email.includes("@")) {
-        Toast.show({
-          type: "error",
-          text1: "E-mail inválido",
-          text2: "Insira um e-mail com @",
-        });
-        return;
-      }
-
-      // Busca todos os usuários cadastrados
-      const response = await fetch(`${getApiUrl()}/users`);
-      if (!response.ok) {
-        throw new Error("Erro ao buscar usuários");
-      }
-      const users = await response.json();
-
-      // Procura usuário com email e senha informados
-      const user = users.find(
-        (u: any) => u.email === email && u.senha === password
-      );
-
-      if (user) {
-        await AsyncStorage.setItem('userId', user._id); // Salva o id
-        Toast.show({
-          type: "success",
-          text1: "Login realizado com sucesso!",
-          text2: "Bem-vindo de volta!",
-        });
-        router.push('/drawer/(tabs)/home');
-      } else {
-        Toast.show({
-          type: "error",
-          text1: "Atenção!",
-          text2: "Email ou senha inválidos!",
-        });
-      }
-    } catch (error) {
-      console.log("Erro ao fazer login:", error);
+    if (!email || !password) {
       Toast.show({
         type: "error",
-        text1: "Erro",
-        text2: "Erro ao conectar com o servidor",
+        text1: "Atenção!",
+        text2: "Preencha todos os campos!",
       });
-    } finally {
-      setLoading(false);
+      return;
     }
+
+    if (!email.includes("@")) {
+      Toast.show({
+        type: "error",
+        text1: "E-mail inválido",
+        text2: "Insira um e-mail com @",
+      });
+      return;
+    }
+
+    const response = await fetch(`${getApiUrl()}/users`);
+    if (!response.ok) {
+      throw new Error("Erro ao buscar usuários");
+    }
+
+    const users = await response.json();
+
+    const user = users.find(
+      (u: any) => u.email === email && u.senha === password
+    );
+
+    if (user) {
+      await AsyncStorage.setItem('userId', user._id);
+
+      // 🔔 Notificação após login bem-sucedido
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: "Login realizado",
+          body: "Você acessou sua conta com sucesso!",
+        },
+        trigger: null,
+      });
+
+      Toast.show({
+        type: "success",
+        text1: "Login realizado com sucesso!",
+        text2: "Bem-vindo de volta!",
+      });
+
+      router.push('/drawer/(tabs)/home');
+    } else {
+      Toast.show({
+        type: "error",
+        text1: "Atenção!",
+        text2: "Email ou senha inválidos!",
+      });
+    }
+  } catch (error) {
+    console.log("Erro ao fazer login:", error);
+    Toast.show({
+      type: "error",
+      text1: "Erro",
+      text2: "Erro ao conectar com o servidor",
+    });
+  } finally {
+    setLoading(false);
   }
+}
+
 
   return (
     <View style={styles.container}>
