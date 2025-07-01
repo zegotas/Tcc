@@ -8,17 +8,21 @@ import { AnuncioAlta } from '@/src/components/anuncioAlta';
 import { Prestadores } from '@/src/components/prestadores';
 import { AnuncioLocal } from '@/src/components/AnuncioLocal';
 import { router } from 'expo-router';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import React, { useEffect, useState } from 'react';
+import { ServicoProps } from '@/src/utils/ServicoProps';
 
 const statusBarHeight = Constants.statusBarHeight;
 
 export default function Home() {
-  const data = [{}]; // dummy data só pra renderizar o bloco todo dentro do FlatList
+  const data = [{}]; 
 
   const handleSearch = (termo: string) => {
     if (termo.trim()) {
       router.push({ pathname: '/drawer/(tabs)/pesquisar', params: { q: termo } });
     }
   };
+
 
   return (
     <FlatList
@@ -30,7 +34,6 @@ export default function Home() {
         <View className="w-full px-4" style={{ marginTop: statusBarHeight }}>
           <Header />
 
-          {/* Agora passando a prop onSearch */}
           <PesquisarServi onSearch={handleSearch} />
 
           <Anuncio />
@@ -42,7 +45,7 @@ export default function Home() {
             size={'text-2xl'}
           />
 
-          <AnuncioLocal />
+          <AnuncioLocal/>
 
           <EmAlta
             name="Serviços em alta"

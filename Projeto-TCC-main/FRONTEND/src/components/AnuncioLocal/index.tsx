@@ -33,7 +33,7 @@ export function AnuncioLocal() {
  return (
     <FlatList
         data={servicos}
-        renderItem={ ({ item }) => <CardHorizontalServi servi={item}/>}
+        renderItem={ ({ item }) => <CardHorizontalServi servi={item} /> }
         horizontal={true}
         contentContainerStyle={{ gap: 14, paddingLeft : 16, paddingRight: 16 }}
         showsHorizontalScrollIndicator={false}
