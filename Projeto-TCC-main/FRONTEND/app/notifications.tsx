@@ -3,6 +3,7 @@ import { View, Text, FlatList, TouchableOpacity, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useFocusEffect } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { Voltar } from '@/src/components/voltar';
 
 interface Notificacao {
   id: string;
@@ -59,6 +60,7 @@ export default function NotificationsScreen() {
 
   return (
     <View className="flex-1 bg-slate-100 px-4 pt-6">
+      <Voltar />
       <View className="flex-row justify-between items-center mb-4">
         <Text className="text-2xl font-bold">Notificações</Text>
         {notificacoes.length > 0 && (

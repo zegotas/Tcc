@@ -1,3 +1,5 @@
+// ✅ Corrigido: garantir que os corações atualizem ao limpar favoritos
+
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Alert } from 'react-native';
 import { useIsFocused } from '@react-navigation/native';
@@ -6,17 +8,16 @@ import { buscarFavoritos, limparFavoritos } from '@/src/utils/favoritos';
 import { ServicoProps } from '../../src/utils/ServicoProps';
 import { DrawerButton } from '@/src/components/drawer';
 
-
 export default function Favoritos() {
   const [favoritos, setFavoritos] = useState<ServicoProps[]>([]);
   const isFocused = useIsFocused();
 
-  useEffect(() => {
-    async function carregarFavoritos() {
-      const data = await buscarFavoritos();
-      setFavoritos(data);
-    }
+  async function carregarFavoritos() {
+    const data = await buscarFavoritos();
+    setFavoritos(data);
+  }
 
+  useEffect(() => {
     if (isFocused) {
       carregarFavoritos();
     }
@@ -42,7 +43,7 @@ export default function Favoritos() {
 
   return (
     <View className="flex-1 bg-white px-4">
-      <DrawerButton/>
+      <DrawerButton />
       <View className="flex-row justify-between items-center mb-4">
         <Text className="text-2xl font-bold">Meus Favoritos</Text>
 
@@ -61,7 +62,7 @@ export default function Favoritos() {
           keyExtractor={(item) => item.id.toString()}
           renderItem={({ item }) => (
             <View className="mb-4">
-              <CardHorizontalServi servi={item} />
+              <CardHorizontalServi servi={item} refreshOnToggleFavorito={carregarFavoritos} />
             </View>
           )}
         />

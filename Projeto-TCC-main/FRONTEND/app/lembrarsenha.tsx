@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   View,
   Text,
@@ -19,6 +19,7 @@ import {
 import { router } from "expo-router";
 
 export default function LembrarSenha() {
+  const inputRef = useRef<TextInput>(null);
   const [selected, setSelected] = useState<"email" | "sms">("email");
   const [emailOrPhone, setEmailOrPhone] = useState("");
 
@@ -124,12 +125,17 @@ export default function LembrarSenha() {
           </Text>
 
           <TextInput
+            ref={inputRef}
+            autoCapitalize="none"
             placeholder={selected === "email" ? "Digite seu email" : "Ex: +55 11 99999-9999"}
             value={emailOrPhone}
             onChangeText={selected === "sms" ? handlePhoneInput : setEmailOrPhone}
             style={selected === "sms" ? styles.inputPhone : styles.input}
             keyboardType={selected === "email" ? "email-address" : "phone-pad"}
             underlineColorAndroid="transparent"
+            returnKeyType="done"
+            blurOnSubmit={false}
+            onSubmitEditing={handleEnviar}
           />
 
           {selected === "sms" && (

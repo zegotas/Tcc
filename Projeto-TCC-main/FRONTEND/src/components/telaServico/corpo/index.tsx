@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, Pressable, TextInput, ActivityIndicator, Alert } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { goToChatWithUser, getUserId } from '@/src/utils/chatHelper';
@@ -7,9 +7,26 @@ import { useRouter } from 'expo-router';
 import * as ImagePicker from 'expo-image-picker';
 import { Image as RNImage } from 'react-native';
 
+import {
+  adicionarFavorito,
+  removerFavorito,
+  isFavorito,
+} from '@/src/utils/favoritos';
+
+
 export function Corpo({ service }: { service: any }) {
   console.log('service recebido:', service);
   const router = useRouter();
+
+  const [favorito, setFavorito] = useState(false);
+
+  useEffect(() => {
+    async function checkFavorito() {
+      const isFav = await isFavorito(service.id);
+      setFavorito(isFav);
+    }
+    checkFavorito();
+  }, [service.id]);
 
   // Comentário
   const [comentario, setComentario] = useState('');
@@ -91,13 +108,33 @@ export function Corpo({ service }: { service: any }) {
     }
   }
 
+  async function toggleFavorito() {
+  if (favorito) {
+    await removerFavorito(service.id);
+    setFavorito(false);
+  } else {
+    await adicionarFavorito(service);
+    setFavorito(true);
+  }
+}
+
   return (
     <View className="flex">
-      <Image 
-        source={{ uri: service.image }} 
-        className="w-full h-60 rounded-2xl"
-        resizeMode="cover"
-      />
+  <Image 
+    source={{ uri: service.image }} 
+    className="w-full h-60 rounded-2xl"
+    resizeMode="cover"
+  />
+  <TouchableOpacity
+    onPress={toggleFavorito}
+    className="absolute top-3 right-3 z-10 bg-white p-2 rounded-full"
+  >
+    <Ionicons
+      name={favorito ? 'heart' : 'heart-outline'}
+      size={24}
+      color="red"
+    />
+  </TouchableOpacity>
 
       <Text className="text-black text-3xl font-bold mt-4">
         {service.name}

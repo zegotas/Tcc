@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import {
   Text,
   View,
@@ -8,6 +8,7 @@ import {
   ActivityIndicator,
   Switch,
   Pressable,
+  Keyboard,
 } from "react-native";
 import Toast from "react-native-toast-message";
 import { styles } from "../src/pages/LogRegLost/login/styles";
@@ -23,6 +24,8 @@ import * as Notifications from 'expo-notifications';
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const emailRef = useRef<TextInput>(null);
+  const passwordRef = useRef<TextInput>(null);
   const [loading, setLoading] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -121,13 +124,15 @@ export default function Login() {
         <Text style={styles.titleInput}>Email</Text>
         <View style={styles.boxInput}>
           <TextInput
+            ref={emailRef}
             style={styles.input}
             value={email}
             onChangeText={setEmail}
             placeholder="Digite seu email"
             keyboardType="email-address"
-            autoCapitalize="none"
-            underlineColorAndroid="transparent"
+            returnKeyType="next"
+            blurOnSubmit={false}
+            onSubmitEditing={() => passwordRef.current?.focus()}
           />
           <MaterialIcons name="email" size={20} color={themas.colors.gray} />
         </View>
@@ -135,12 +140,17 @@ export default function Login() {
         <Text style={styles.titleInput}>Senha</Text>
         <View style={styles.boxInput}>
           <TextInput
+            ref={passwordRef}
             style={styles.input}
             value={password}
             onChangeText={setPassword}
             placeholder="Digite sua senha"
             secureTextEntry={!showPassword}
-            underlineColorAndroid="transparent"
+            returnKeyType="done"
+            onSubmitEditing={() => {
+              Keyboard.dismiss();
+              getLogin(); // Chama login ao pressionar Enter na senha
+            }}
           />
           <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
             <MaterialIcons

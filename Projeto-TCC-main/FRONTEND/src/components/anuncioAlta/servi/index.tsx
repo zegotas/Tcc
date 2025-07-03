@@ -1,57 +1,58 @@
-import React, { useEffect, useState } from 'react';
 import { View, Pressable, Text, Image, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
+import { ServicoProps } from '@/src/utils/ServicoProps';
 import { router } from 'expo-router';
+import { useEffect, useState } from 'react';
+import { adicionarFavorito, isFavorito, removerFavorito } from '@/src/utils/favoritos';
 
-import { ServicoProps } from '..';
-import {
-  adicionarFavorito,
-  removerFavorito,
-  isFavorito
-} from '@/src/utils/favoritos';
+interface Props {
+  servi: ServicoProps;
+  refreshOnToggleFavorito?: () => void; // <- Adiciona essa linha
+}
 
-export function CardHorizontalServi({ servi }: { servi: ServicoProps }) {
-  const [favoritado, setFavoritado] = useState(false);
+export function CardHorizontalServi({ servi, refreshOnToggleFavorito }: Props) {
+  const [favorito, setFavorito] = useState(false);
 
   useEffect(() => {
-    const verificar = async () => {
-      const favorito = await isFavorito(servi.id);
-      setFavoritado(favorito);
-    };
-    verificar();
+    async function checkFavorito() {
+      const fav = await isFavorito(servi.id);
+      setFavorito(fav);
+    }
+    checkFavorito();
   }, [servi.id]);
 
-  const toggleFavorito = async () => {
-    if (favoritado) {
+  async function toggleFavorito() {
+    if (favorito) {
       await removerFavorito(servi.id);
-      setFavoritado(false);
     } else {
       await adicionarFavorito(servi);
-      setFavoritado(true);
     }
-  };
+    setFavorito(!favorito);
+
+    // Executa o callback se existir
+    if (refreshOnToggleFavorito) {
+      refreshOnToggleFavorito();
+    }
+  }
 
   return (
-    <Pressable
-      onPress={() =>
-        router.push({ pathname: '/telaServico', params: { servi: JSON.stringify(servi) } })
-      }
+    <Pressable 
+      onPress={() => router.push({ pathname: '/telaServico', params: { servi: JSON.stringify(servi) } })}
       className="w-44 flex flex-col rounded-xl relative bg-white mr-2"
     >
       <View>
         <Image
           source={{ uri: servi.image }}
-          className="w-full h-36 rounded-t-xl"
+          className="w-full h-36 flex-col rounded-t-xl"
           resizeMode="cover"
-        />
+        /> 
 
-        {/* Coração sobreposto na imagem */}
         <TouchableOpacity
           onPress={toggleFavorito}
-          className="absolute top-2 right-2 p-1 rounded-full bg-white"
+          className="absolute top-2 right-2 z-10"
         >
           <Ionicons
-            name={favoritado ? 'heart' : 'heart-outline'}
+            name={favorito ? 'heart' : 'heart-outline'}
             size={20}
             color="red"
           />
@@ -59,7 +60,7 @@ export function CardHorizontalServi({ servi }: { servi: ServicoProps }) {
       </View>
 
       <View className="px-1 py-2">
-        <Text
+        <Text 
           className="text-black mt-1 w-full overflow-hidden"
           numberOfLines={1}
           ellipsizeMode="tail"
@@ -67,7 +68,7 @@ export function CardHorizontalServi({ servi }: { servi: ServicoProps }) {
           {servi.name}
         </Text>
 
-        <Text
+        <Text 
           className="text-green-700 font-medium text-lg w-full overflow-hidden"
           numberOfLines={1}
           ellipsizeMode="tail"

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   View,
   Text,
@@ -19,6 +19,11 @@ import { getApiUrl } from "../src/global/api";
 
 export default function Register() {
   const router = useRouter();
+  const emailRef = useRef<TextInput>(null);
+  const cpfRef = useRef<TextInput>(null);
+  const birthDateRef = useRef<TextInput>(null);
+  const passwordRef = useRef<TextInput>(null);
+  const confirmPasswordRef = useRef<TextInput>(null);
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [cpfCnpj, setCpfCnpj] = React.useState("");
@@ -149,10 +154,13 @@ export default function Register() {
           <Text style={styles.titleInput}>Nome</Text>
           <View style={styles.boxInput}>
             <TextInput
+              ref={null}
               style={styles.input}
               placeholder="Digite seu nome"
               value={name}
               onChangeText={setName}
+              returnKeyType="next"
+              onSubmitEditing={() => emailRef.current?.focus()}
               underlineColorAndroid="transparent"
             />
             <MaterialIcons name="person" size={20} color={themas.colors.gray} />
@@ -161,12 +169,15 @@ export default function Register() {
           <Text style={styles.titleInput}>Email</Text>
           <View style={styles.boxInput}>
             <TextInput
+              ref={emailRef}
               style={styles.input}
               placeholder="Digite seu email"
               value={email}
               onChangeText={setEmail}
               keyboardType="email-address"
               underlineColorAndroid="transparent"
+              returnKeyType="next"
+              onSubmitEditing={() => cpfRef.current?.focus()}
             />
             <MaterialIcons name="email" size={20} color={themas.colors.gray} />
           </View>
@@ -174,12 +185,15 @@ export default function Register() {
           <Text style={styles.titleInput}>CPF ou CNPJ</Text>
           <View style={styles.boxInput}>
             <TextInput
+              ref={cpfRef}
               style={styles.input}
               placeholder="Digite seu CPF ou CNPJ"
               value={cpfCnpj}
               onChangeText={(text) => setCpfCnpj(formatCpfCnpj(text))}
               keyboardType="numeric"
               underlineColorAndroid="transparent"
+              returnKeyType="next"
+              onSubmitEditing={() => birthDateRef.current?.focus()}
             />
             <MaterialIcons name="badge" size={20} color={themas.colors.gray} />
           </View>
@@ -187,12 +201,15 @@ export default function Register() {
           <Text style={styles.titleInput}>Data de nascimento</Text>
           <View style={styles.boxInput}>
             <TextInput
+              ref={birthDateRef}
               style={styles.input}
               placeholder="DD/MM/AAAA"
               value={birthDate}
               onChangeText={(text) => setBirthDate(formatDate(text))}
               keyboardType="numeric"
               underlineColorAndroid="transparent"
+              returnKeyType="next"
+              onSubmitEditing={() => passwordRef.current?.focus()}
             />
             <MaterialIcons name="calendar-today" size={20} color={themas.colors.gray} />
           </View>
@@ -200,12 +217,15 @@ export default function Register() {
           <Text style={styles.titleInput}>Senha</Text>
           <View style={styles.boxInput}>
             <TextInput
+              ref={passwordRef}
               style={styles.input}
               placeholder="Digite sua senha"
               secureTextEntry={!showPassword}
               value={password}
               onChangeText={setPassword}
               underlineColorAndroid="transparent"
+              returnKeyType="next"
+              onSubmitEditing={() => confirmPasswordRef.current?.focus()}
             />
             <TouchableOpacity onPress={() => setShowPassword(!showPassword)}>
               <MaterialIcons
@@ -219,12 +239,15 @@ export default function Register() {
           <Text style={styles.titleInput}>Confirmar senha</Text>
           <View style={styles.boxInput}>
             <TextInput
+              ref={confirmPasswordRef}
               style={styles.input}
               placeholder="Confirme sua senha"
               secureTextEntry={!showConfirmPassword}
               value={confirmPassword}
               onChangeText={setConfirmPassword}
               underlineColorAndroid="transparent"
+              returnKeyType="done"
+              onSubmitEditing={handleRegister}
             />
             <TouchableOpacity
               onPress={() => setShowConfirmPassword(!showConfirmPassword)}
