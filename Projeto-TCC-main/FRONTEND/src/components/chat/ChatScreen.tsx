@@ -1,11 +1,17 @@
 import React, { useEffect, useState, useCallback, useRef } from 'react';
-import { View, FlatList } from 'react-native';
+import { View, FlatList, Pressable } from 'react-native';
 import { useLocalSearchParams } from 'expo-router';
 import MessageBubble from './MessageBubble';
 import InputBar from './InputBar';
 import { getApiUrl } from '../../global/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import socket from '../../global/socket';
+
+import { Ionicons } from '@expo/vector-icons';
+import Constants from 'expo-constants';
+import { router } from 'expo-router';
+const statusBarHeight = Constants.statusBarHeight;
+
 
 interface Message {
   _id: string;
@@ -17,6 +23,7 @@ interface Message {
 }
 
 export default function ChatScreen() {
+
   const { chatId, receiverId } = useLocalSearchParams();
   console.log('[FRONT] Parâmetros do chat:', { chatId, receiverId });
 
@@ -117,7 +124,17 @@ export default function ChatScreen() {
   };
 
   return (
-    <View className="flex-1 bg-white">
+
+    <View className='flex-1'>
+      <Pressable 
+                  className='px-4 mb-2'
+                  style={{ marginTop: statusBarHeight }}
+                  onPress={() => router.navigate('/drawer/ChatListScreen')}
+                >
+                <Ionicons  name="arrow-back-outline" size={20} color="#121212" />
+      </Pressable> 
+      <View className="flex-1 bg-white">
+      
       {loading ? (
         <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
           <MessageBubble text="Carregando..." isSender={false} timestamp={''} />
@@ -137,9 +154,12 @@ export default function ChatScreen() {
           )}
           className="px-4"
           contentContainerStyle={{ paddingVertical: 8 }}
+          inverted
         />
       )}
       <InputBar onSend={handleSend} onSendImage={handleSendImage} />
+    </View>    
     </View>
+
   );
 }

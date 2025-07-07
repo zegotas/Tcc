@@ -3,6 +3,7 @@ import { View, Text, Pressable, FlatList, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getApiUrl } from "@/src/global/api";
 import { useRouter } from 'expo-router';
+import { Voltar } from '@/src/components/voltar';
 
 export default function ExcluirEnd() {
   const [enderecos, setEnderecos] = useState<any[]>([]);
@@ -66,13 +67,16 @@ export default function ExcluirEnd() {
   };
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#f8f9fa', padding: 20 }}>
+
+    <View className='flex-1 bg-white'>
+      <Voltar/>
+      <View style={{ backgroundColor: '#white', padding: 20 }}>
       <Text style={{ fontWeight: 'bold', fontSize: 22, marginBottom: 18, color: '#222' }}>Selecione o endereço para excluir:</Text>
       <FlatList
         data={enderecos}
         keyExtractor={(_, idx) => idx.toString()}
         renderItem={({ item, index }) => (
-          <View style={{ marginBottom: 16, padding: 16, backgroundColor: '#fff', borderRadius: 12, borderWidth: 1, borderColor: '#e0e0e0', shadowColor: '#000', shadowOffset: { width: 0, height: 2 }, shadowOpacity: 0.08, shadowRadius: 4, elevation: 2 }}>
+          <View style={{ marginBottom: 16, padding: 16, backgroundColor: '#fff', borderRadius: 10, borderWidth: 2, borderColor: 'black'}}>
             {typeof item === 'string' ? (
               <Text style={{ color: '#555', fontSize: 15 }}>{item}</Text>
             ) : (
@@ -92,6 +96,9 @@ export default function ExcluirEnd() {
         )}
         ListEmptyComponent={<Text style={{ color: '#888', fontSize: 16, textAlign: 'center', marginTop: 40 }}>Nenhum endereço cadastrado.</Text>}
       />
+    </View>    
+
     </View>
+
   );
 }

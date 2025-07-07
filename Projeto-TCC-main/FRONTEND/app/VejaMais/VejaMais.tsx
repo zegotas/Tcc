@@ -27,7 +27,7 @@ export default function VejaMais() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <View className="bg-slate-200 flex-1 px-4 ">
-        <Voltar />
+        <Voltar/>
         <Text className="text-2xl font-bold mb-4">Serviços mais perto de você</Text>
 
         {loading ? (

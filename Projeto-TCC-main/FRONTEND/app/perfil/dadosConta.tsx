@@ -18,6 +18,11 @@ import { styles } from '../../src/pages/perfil/dadosConta/styles';
 import { toastConfig } from '@/src/components/toastConfig';
 import { getApiUrl } from '@/src/global/api';
 
+import { Ionicons } from '@expo/vector-icons';
+import Constants from 'expo-constants';
+import { router } from 'expo-router';
+const statusBarHeight = Constants.statusBarHeight;
+
 export default function DadosConta() {
   const [isEditing, setIsEditing] = useState(false);
   const [userId, setUserId] = useState<string | null>(null);
@@ -119,6 +124,13 @@ export default function DadosConta() {
       style={{ flex: 1 }}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
+      <Pressable 
+          className='px-4 mb-2'
+          style={{ marginTop: statusBarHeight }}
+          onPress={() => router.navigate('/drawer/perfil')}
+        >
+            <Ionicons  name="arrow-back-outline" size={20} color="#121212" />
+      </Pressable>
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <ScrollView contentContainerStyle={styles.scrollContainer}>
           <View style={styles.container}>

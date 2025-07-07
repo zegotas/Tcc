@@ -10,7 +10,7 @@ export function CardHorizontalServi({ servi }: { servi: ServicoProps }) {
 
   return (
     <Pressable 
-      onPress={() => router.push({ pathname: '/telaServico', params: { servi: JSON.stringify(servi) } })}
+      onPress={() => router.navigate({ pathname: '/telaServico', params: { servi: JSON.stringify(servi) } })}
       className="w-full flex flex-col rounded-xl relative bg-white mr-2"
     >
       <Image

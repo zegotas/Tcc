@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, Pressable } from 'react-native';
+import { View, Text, Pressable, ScrollView } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getApiUrl } from "@/src/global/api";
 import { useRouter } from 'expo-router';
+
+import { Ionicons } from '@expo/vector-icons';
+import Constants from 'expo-constants';
+import { router } from 'expo-router';
+const statusBarHeight = Constants.statusBarHeight;
 
 export default function Endereco() {
   const [userId, setUserId] = useState<string | null>(null);
@@ -24,7 +29,16 @@ export default function Endereco() {
   }, []);
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#f8f9fa', padding: 20 }}>
+    <ScrollView className='flex-1 flex bg-white'>
+        <Pressable 
+          className='px-4 mb-2'
+          style={{ marginTop: statusBarHeight }}
+          onPress={() => router.navigate('/drawer/perfil')}
+        >
+            <Ionicons  name="arrow-back-outline" size={20} color="#121212" />
+      </Pressable>
+
+      <View style={{ backgroundColor: 'white', padding: 20 }}>
       <Text style={{ fontWeight: 'bold', fontSize: 24, marginBottom: 18, color: '#222' }}>Meus Endereços</Text>
       {enderecos.length === 0 ? (
         <View style={{ alignItems: 'center', marginTop: 40 }}>
@@ -39,7 +53,7 @@ export default function Endereco() {
               padding: 16,
               borderRadius: 12,
               borderWidth: 1,
-              borderColor: '#e0e0e0',
+              borderColor: 'black',
               shadowColor: '#000',
               shadowOffset: { width: 0, height: 2 },
               shadowOpacity: 0.08,
@@ -96,6 +110,7 @@ export default function Endereco() {
       >
         <Text style={{ color: '#fff', fontWeight: 'bold', fontSize: 16 }}>Excluir Endereço</Text>
       </Pressable>
-    </View>
+      </View>
+    </ScrollView>
   );
 }

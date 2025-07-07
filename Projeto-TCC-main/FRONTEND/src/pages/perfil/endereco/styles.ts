@@ -66,8 +66,7 @@ export const styles = StyleSheet.create({
   },
 
   input: {
-    backgroundColor: '#f9f9f9',
-    borderColor: '#ccc',
+    borderColor: 'black',
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 15,

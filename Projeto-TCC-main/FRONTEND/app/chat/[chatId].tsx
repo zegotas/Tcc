@@ -7,8 +7,7 @@ export default function ChatPage() {
   // Apenas renderiza o ChatScreen real, que já busca mensagens do backend
   return (
     <>
-      <Voltar />
-      <ChatScreen />
+      <ChatScreen/>
     </>
   );
 }

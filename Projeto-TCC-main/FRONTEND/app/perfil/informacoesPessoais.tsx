@@ -17,6 +17,12 @@ import { getApiUrl } from '../../src/global/api';
 import { styles } from '../../src/pages/perfil/infPessoais/styles';
 import { toastConfig } from '@/src/components/toastConfig';
 
+import { router } from 'expo-router';
+
+import { Ionicons } from '@expo/vector-icons';
+import Constants from 'expo-constants';
+const statusBarHeight = Constants.statusBarHeight;
+
 export default function InformacoesPessoais() {
   const [isEditing, setIsEditing] = useState(false);
   const [nome, setNome] = useState('');
@@ -108,11 +114,19 @@ export default function InformacoesPessoais() {
       style={{ flex: 1 }}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
+      <Pressable 
+          className='px-4 mb-2'
+          style={{ marginTop: statusBarHeight }}
+          onPress={() => router.navigate('/drawer/perfil')}
+        >
+            <Ionicons  name="arrow-back-outline" size={20} color="#121212" />
+      </Pressable>
+
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
         <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
           <View style={styles.container}>
             <View style={styles.caixa1}>
-              <Text style={styles.textTittle}>Nome Completo</Text>
+              <Text style={styles.textTittle}>Nome completo</Text>
               <Text style={styles.text}>{nome}</Text>
               <Text style={styles.textTittleCpf}>CPF</Text>
               <TextInput
@@ -122,9 +136,9 @@ export default function InformacoesPessoais() {
               />
             </View>
             <View style={styles.caixa2}>
-              <Text style={styles.textTitleData}>Data de Nascimento</Text>
+              <Text style={styles.textTitleData}>Data de nascimento</Text>
               <Text style={styles.text}>{data}</Text>
-              <Text style={styles.textTitleEnde}>Endereço Principal</Text>
+              <Text style={styles.textTitleEnde}>Endereço principal</Text>
               {isEditing && enderecos.length > 1 ? (
                 <View style={styles.pickerContainer}>
                   <Picker

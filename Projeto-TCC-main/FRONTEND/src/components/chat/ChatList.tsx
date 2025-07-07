@@ -46,4 +46,5 @@ const ChatList = ({ chats, onSelectChat }: Props) => {
   );
 };
 
+
 export default ChatList;

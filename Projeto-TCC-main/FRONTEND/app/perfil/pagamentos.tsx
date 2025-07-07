@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, TextInput, Modal, Alert } from 'react-native';
+import { ScrollView, View, Text, StyleSheet, TouchableOpacity, TextInput, Modal, Alert, Pressable } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { getApiUrl } from '../../src/global/api';
+
+import { Ionicons } from '@expo/vector-icons';
+import Constants from 'expo-constants';
+import { router } from 'expo-router';
+const statusBarHeight = Constants.statusBarHeight;
 
 export default function Pagamentos() {
   const [modalVisible, setModalVisible] = useState(false);
@@ -65,8 +70,19 @@ export default function Pagamentos() {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Cartões Cadastrados</Text>
+
+    <ScrollView className='flex-1 bg-white' >
+
+          <Pressable 
+            className='px-4 mb-2'
+            style={{ marginTop: statusBarHeight }}
+            onPress={() => router.navigate('/drawer/perfil')}
+          >
+              <Ionicons  name="arrow-back-outline" size={20} color="#121212" />
+        </Pressable>  
+
+      <View style={styles.container}>
+        <Text style={styles.title}>Cartões Cadastrados</Text>
       {cartaoCredito && cartaoCredito.numero && (
         <Text>Crédito: **** **** **** {cartaoCredito.numero.slice(-4)}</Text>
       )}
@@ -100,13 +116,15 @@ export default function Pagamentos() {
             <Text style={{ color: 'red', marginTop: 20 }}>Cancelar</Text>
           </TouchableOpacity>
         </View>
-      </Modal>
-    </View>
+      </Modal>  
+      </View>
+
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 20, backgroundColor: '#fff' },
+  container: { padding: 20},
   title: { fontSize: 24, fontWeight: 'bold', marginBottom: 20 },
   addButton: { marginTop: 30 },
   addText: { color: '#007BFF', fontSize: 16, fontWeight: '600' },

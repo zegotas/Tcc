@@ -1,5 +1,5 @@
 import { View, FlatList } from 'react-native';
-import Constants from 'expo-constants';
+
 import { Header } from '@/src/components/header';
 import { Anuncio } from '@/src/components/anuncio/anuncio';
 import { PesquisarServi } from '@/src/components/PesquisarServi/PesquisarServi';
@@ -7,11 +7,11 @@ import { EmAlta } from '../../../src/components/alta/EmAlta';
 import { AnuncioAlta } from '@/src/components/anuncioAlta';
 import { Prestadores } from '@/src/components/prestadores';
 import { AnuncioLocal } from '@/src/components/AnuncioLocal';
-import { router } from 'expo-router';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import React, { useEffect, useState } from 'react';
-import { ServicoProps } from '@/src/utils/ServicoProps';
 
+import { router } from 'expo-router';
+import React from 'react';
+
+import Constants from 'expo-constants';
 const statusBarHeight = Constants.statusBarHeight;
 
 export default function Home() {

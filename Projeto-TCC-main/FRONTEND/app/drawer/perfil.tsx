@@ -17,10 +17,10 @@ export default function Perfil() {
 
 
       <TouchableOpacity style={styles.button} onPress={() => router.push('/perfil/informacoesPessoais')}>
-      <Text style={styles.buttonText}>Informações Pessoais</Text>
+      <Text style={styles.buttonText}>Informações pessoais</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={() => router.push('/perfil/dadosConta')}>
-      <Text style={styles.buttonText}>Dados da Conta</Text>
+      <Text style={styles.buttonText}>Dados da conta</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.button} onPress={() => router.push('/perfil/endereco')}>
       <Text style={styles.buttonText}>Endereços</Text>
